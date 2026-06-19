@@ -179,7 +179,7 @@ img {
   background-image: url('images/hero.png');
   background-size: cover;
   background-position: center top;
-  border-radius: 18px;
+  border-radius: 0;
 }
 
 @media (min-width: 900px) {
@@ -187,7 +187,7 @@ img {
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
     min-height: unset;
-    border-radius: 18px;
+    border-radius: 0;
   }
 }
 
@@ -337,8 +337,8 @@ img {
 .about-bio__gallery-item {
   flex: 1 1 100%;
   max-width: 100%;
-  min-height: 240px;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 9 / 16;
+  min-height: unset;
   background-size: cover;
   background-position: center;
   border-radius: 10px;
@@ -349,7 +349,6 @@ img {
     flex: 1 1 280px;
     max-width: 360px;
     aspect-ratio: 9 / 16;
-    min-height: unset;
   }
 }
 
@@ -621,9 +620,9 @@ img {
       <h2 class="section-title" style="margin-bottom:24px;">Про мене</h2>
       <p class="body-text about-bio__descr">В психології я вже <strong>12 років</strong>. Починав із НЛП, гіпнотерапії, тренінгів зі стосунків та особистісного зростання.</p>
       <div class="about-bio__gallery">
-        <div class="about-bio__gallery-item" style="background-image:url('images/bio-1.jpg');"></div>
-        <div class="about-bio__gallery-item" style="background-image:url('images/bio-2.jpg');"></div>
-        <div class="about-bio__gallery-item" style="background-image:url('images/bio-3.jpg');"></div>
+        <div class="about-bio__gallery-item" style="background-image:url('images/gallery1.png');"></div>
+        <div class="about-bio__gallery-item" style="background-image:url('images/gallery2.png');"></div>
+        <div class="about-bio__gallery-item" style="background-image:url('images/gallery3.png');"></div>
       </div>
     </div>
   </section>
