@@ -187,6 +187,8 @@ img {
     height: 100%;
     min-height: 100%;
     border-radius: 0;
+    background-size: contain;
+    background-position: center bottom;
   }
 }
 
@@ -334,9 +336,9 @@ img {
 }
 
 .about-bio__gallery-item {
-  flex: 1 1 0;
-  max-width: none;
-  aspect-ratio: 9 / 16;
+  flex: 1 1 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
   min-height: unset;
   background-size: cover;
   background-position: center;
@@ -346,8 +348,8 @@ img {
 @media (min-width: 900px) {
   .about-bio__gallery-item {
     flex: 1 1 0;
-    max-width: 360px;
-    aspect-ratio: 9 / 16;
+    max-width: none;
+    aspect-ratio: 16 / 9;
   }
 }
 
