@@ -1,594 +1,766 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Микола Шаповал — психолог</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <meta name="description" content="Психолог у клієнтоцентрованому підході. Допомагаю нарешті видихнути й повернути смак до життя.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23e7ece0%22/><text x=%2250%22 y=%2268%22 font-size=%2255%22 font-family=%22Arial%22 font-weight=%22800%22 fill=%22%23352a22%22 text-anchor=%22middle%22>М</text></svg>" type="image/svg+xml">
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* ============================================
+   Локальний шрифт Manrope (без Google Fonts)
+   ============================================ */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/manrope-cyrillic-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/manrope-cyrillic-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/manrope-cyrillic-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/manrope-cyrillic-700-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('fonts/manrope-cyrillic-800-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/manrope-latin-400-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+2000-206F;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/manrope-latin-500-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+2000-206F;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/manrope-latin-600-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+2000-206F;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/manrope-latin-700-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+2000-206F;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('fonts/manrope-latin-800-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+2000-206F;
+}
 
-    :root {
-      --cream: #f0ece4;
-      --sage: #e7ece0;
-      --dark: #2d2620;
-      --gray: #6b6560;
-      --gray-light: #9a948f;
-      --green: #3d6b52;
-      --footer-bg: #2d2318;
-      --btn-blue: #2fa7e0;
-      --btn-blue-hover: #1a93cc;
-    }
+/* ============================================
+   Микола Шаповал — психолог. Копія сайту з Tilda.
+   Кольори, розміри шрифтів, відступи та радіуси
+   взяті безпосередньо з коду оригінальної сторінки.
+   ============================================ */
 
-    html { scroll-behavior: smooth; }
+:root {
+  --color-dark: #352a22;       /* основний темний текст / темний фон футера */
+  --color-body: #5c5247;       /* колір тексту параграфів */
+  --color-cream: #f7f2ea;      /* фон секцій (кремовий) */
+  --color-sage: #e7ece0;       /* фон секцій (світло-зелений) */
+  --color-accent: #4f9de5;     /* колір кнопок */
+  --color-accent-hover: #3f8bd1;
+  --color-green: #3e5b49;      /* колір ціни / акцентних крапок */
+  --color-white: #ffffff;
 
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: var(--cream);
-      color: var(--dark);
-      font-size: 17px;
-      line-height: 1.7;
-    }
+  --font-main: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
-    /* ── HERO ── */
-    .hero {
-      display: flex;
-      align-items: stretch;
-      min-height: 520px;
-      overflow: hidden;
-    }
+  --container-max: 1200px;
+  --radius-btn: 30px;
+  --radius-card: 12px;
+}
 
-    .hero-text {
-      flex: 0 0 55%;
-      background-color: var(--sage);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 72px 56px 72px 80px;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .hero-name {
-      font-size: 26px;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      color: var(--dark);
-      margin-bottom: 14px;
-      text-transform: uppercase;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    .hero-tagline {
-      font-size: 17px;
-      font-weight: 400;
-      color: var(--dark);
-      margin-bottom: 40px;
-      line-height: 1.55;
-    }
+body {
+  font-family: var(--font-main);
+  color: var(--color-body);
+  line-height: 1.4;
+  background: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+}
 
-    .hero-photo {
-      flex: 0 0 45%;
-      background-color: var(--sage);
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      overflow: hidden;
-    }
+a {
+  text-decoration: none;
+}
 
-    .hero-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-    }
+img {
+  display: block;
+  max-width: 100%;
+}
 
-    /* ── BUTTON ── */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background-color: var(--btn-blue);
-      color: #fff;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.09em;
-      padding: 14px 26px;
-      border-radius: 50px;
-      transition: background-color 0.2s;
-      width: fit-content;
-    }
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-    .btn:hover { background-color: var(--btn-blue-hover); }
+.narrow-960 { max-width: 960px; margin-left: auto; margin-right: auto; }
+.narrow-760 { max-width: 760px; margin-left: auto; margin-right: auto; }
+.narrow-560 { max-width: 560px; margin-left: auto; margin-right: auto; }
 
-    .btn img {
-      width: 18px;
-      height: 18px;
-      filter: brightness(0) invert(1);
-      flex-shrink: 0;
-    }
+.text-center { text-align: center; }
 
-    /* ── WHEN SECTION ── */
-    .when-section {
-      background-color: var(--cream);
-      padding: 80px 64px;
-    }
+.section {
+  position: relative;
+}
 
-    .when-title {
-      font-size: 32px;
-      font-weight: 700;
-      text-align: center;
-      color: var(--dark);
-      margin-bottom: 56px;
-      line-height: 1.3;
-    }
+/* ============ Кнопка "ПИШІТЬ СЮДИ" ============ */
 
-    .when-list {
-      list-style: none;
-      max-width: 640px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 36px;
-    }
+.btn-tg {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background-color: var(--color-accent);
+  color: var(--color-white) !important;
+  font-weight: 600;
+  font-size: 17px;
+  padding: 14px 28px;
+  border-radius: var(--radius-btn);
+  border: none;
+  transition: background-color .2s ease-in-out, transform .2s ease-in-out;
+  white-space: normal;
+}
 
-    .when-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 22px;
-    }
+.btn-tg:hover {
+  background-color: var(--color-accent-hover);
+}
 
-    .when-dot {
-      flex-shrink: 0;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background-color: var(--green);
-      margin-top: 4px;
-    }
+.btn-tg .btn-tg__icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  display: inline-flex;
+}
 
-    .when-item-title {
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      color: var(--dark);
-      margin-bottom: 8px;
-      text-transform: uppercase;
-    }
+.btn-tg .btn-tg__icon svg {
+  width: 100%;
+  height: 100%;
+}
 
-    .when-item-text {
-      font-size: 16px;
-      color: var(--dark);
-      line-height: 1.7;
-    }
+/* ============ HERO ============ */
 
-    /* ── HI SECTION ── */
-    .hi-section {
-      background-color: var(--sage);
-      text-align: center;
-      padding: 80px 64px;
-    }
+.hero {
+  background-color: var(--color-sage);
+  padding: 60px 0;
+  overflow: hidden;
+}
 
-    .hi-title {
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      color: var(--dark);
-      margin-bottom: 24px;
-      text-transform: uppercase;
-    }
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 32px;
+}
 
-    .hi-body {
-      max-width: 680px;
-      margin: 0 auto;
-      font-size: 17px;
-      color: var(--dark);
-      line-height: 1.75;
-    }
+.hero__content {
+  flex: none;
+  width: 100%;
+}
 
-    .hi-body p { margin-bottom: 18px; }
-    .hi-body p:last-child { margin-bottom: 0; }
+@media (min-width: 900px) {
+  .hero__inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+  }
+  .hero__content {
+    flex: 1 1 360px;
+    max-width: 460px;
+  }
+}
 
-    .hi-italic {
-      font-style: italic;
-      color: var(--gray);
-    }
+.hero__title {
+  color: var(--color-dark);
+  font-weight: 800;
+  font-size: 38px;
+  line-height: 1;
+  padding-bottom: 25px;
+}
 
-    .hi-colored {
-      color: var(--green);
-    }
+.hero__descr {
+  color: var(--color-body);
+  font-size: 26px;
+  line-height: 1.25;
+  margin-bottom: 30px;
+}
 
-    /* ── ABOUT SECTION ── */
-    .about-section {
-      background-color: var(--cream);
-      padding: 80px 64px;
-      text-align: center;
-    }
+.hero__photo-wrap {
+  flex: none;
+  width: 100%;
+  margin: 0;
+}
 
-    .section-title {
-      font-size: 34px;
-      font-weight: 700;
-      text-align: center;
-      color: var(--dark);
-      margin-bottom: 48px;
-    }
+@media (min-width: 900px) {
+  .hero__photo-wrap {
+    flex: 1 1 320px;
+    max-width: 560px;
+  }
+}
 
-    .about-intro {
-      max-width: 600px;
-      margin: 0 auto 48px;
-      font-size: 17px;
-      color: var(--dark);
-      line-height: 1.75;
-    }
+.hero__photo {
+  width: 100%;
+  min-height: 280px;
+  background-image: url('img/hero.jpg');
+  background-size: cover;
+  background-position: center top;
+  border-radius: 18px;
+}
 
-    /* Gallery */
-    .gallery {
-      display: flex;
-      flex-direction: row;
-      gap: 16px;
-      margin-bottom: 48px;
-      justify-content: center;
-    }
+@media (min-width: 900px) {
+  .hero__photo {
+    aspect-ratio: 1 / 1;
+    min-height: unset;
+  }
+}
 
-    .gallery-item {
-      flex: 1;
-      aspect-ratio: 16/9;
-      overflow: hidden;
-      border-radius: 4px;
-    }
+@media (min-width: 900px) {
+  .hero__title { font-size: 60px; line-height: 1; }
+  .hero__descr { font-size: 32px; line-height: 1.2; }
+}
 
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+/* ============ Заголовки секцій (загальні) ============ */
 
-    .about-outro {
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 17px;
-      color: var(--dark);
-      line-height: 1.75;
-    }
+.section-title {
+  color: var(--color-dark);
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1.15;
+  text-align: center;
+}
 
-    .about-outro p { margin-bottom: 16px; }
-    .about-outro p:last-child { margin-bottom: 0; }
+@media (min-width: 900px) {
+  .section-title { font-size: 56px; }
+}
 
-    /* ── REVIEWS SECTION ── */
-    .reviews-section {
-      background-color: var(--sage);
-      text-align: center;
-      padding: 80px 64px;
-    }
+.body-text {
+  color: var(--color-body);
+  font-size: 26px;
+  line-height: 1.2;
+}
 
-    .reviews-subtitle {
-      font-size: 20px;
-      font-weight: 700;
-      max-width: 560px;
-      margin: -24px auto 40px;
-      color: var(--dark);
-      line-height: 1.5;
-    }
+/* ============ "До мене звертаються коли…" ============ */
 
-    .reviews-list {
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
+.intro-q {
+  background-color: var(--color-cream);
+  padding: 75px 0 15px;
+}
 
-    .reviews-item {
-      font-size: 16px;
-      color: var(--dark);
-      line-height: 1.75;
-    }
+/* ============ Картки причин (508) ============ */
 
-    /* ── PRICE SECTION ── */
-    .price-section {
-      background-color: var(--cream);
-      padding: 80px 64px;
-      text-align: center;
-    }
+.reasons {
+  background-color: var(--color-cream);
+  padding: 15px 0 75px;
+}
 
-    .price-cards {
-      display: flex;
-      gap: 24px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 56px;
-    }
+.reasons__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 40px;
+}
 
-    .price-card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 40px 36px;
-      width: 300px;
-      text-align: center;
-      box-shadow: 0 1px 6px rgba(0,0,0,0.07);
-    }
+.reasons__item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  text-align: left;
+}
 
-    .price-card-title {
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 8px;
-    }
+.reasons__bullet {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  margin-top: 10px;
+  border-radius: 50%;
+  background-color: var(--color-green);
+}
 
-    .price-card-duration {
-      font-size: 14px;
-      color: var(--gray-light);
-      margin-bottom: 24px;
-    }
+.reasons__title {
+  color: var(--color-dark);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
 
-    .price-card-price {
-      font-size: 34px;
-      font-weight: 700;
-      color: var(--green);
-      margin-bottom: 20px;
-    }
+@media (min-width: 900px) {
+  .reasons__title { font-size: 36px; }
+}
 
-    .price-card-desc {
-      font-size: 15px;
-      color: var(--gray);
-      line-height: 1.65;
-    }
+.reasons__descr {
+  color: var(--color-body);
+  font-size: 26px;
+  line-height: 1.2;
+}
 
-    /* ── CTA SECTION ── */
-    .cta-section {
-      background-color: var(--cream);
-      text-align: center;
-      padding: 0 64px 96px;
-    }
+.reasons__descr strong {
+  color: #6b6b6b;
+}
 
-    .cta-text {
-      max-width: 520px;
-      margin: 0 auto 36px;
-      font-size: 17px;
-      color: var(--dark);
-      line-height: 1.75;
-    }
+/* ============ "Привіт! Я Микола" ============ */
 
-    .cta-text p { margin-bottom: 14px; }
-    .cta-text p:last-child { margin-bottom: 0; }
+.about-intro {
+  background-color: var(--color-sage);
+  padding: 75px 0;
+}
 
-    .cta-btn-wrap {
-      display: flex;
-      justify-content: center;
-    }
+.about-intro__title {
+  color: var(--color-dark);
+  font-weight: 800;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 24px;
+}
 
-    /* ── FOOTER ── */
-    footer {
-      background-color: var(--footer-bg);
-      padding: 56px 64px;
-      text-align: center;
-    }
+@media (min-width: 900px) {
+  .about-intro__title { font-size: 36px; }
+}
 
-    .footer-title {
-      font-size: 17px;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 28px;
-    }
+.about-intro__descr {
+  color: var(--color-body);
+  font-size: 26px;
+  line-height: 1.4;
+  text-align: center;
+}
 
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+.about-intro__descr strong {
+  color: #333;
+}
 
-    .social-link {
-      display: inline-block;
-      border: 1.5px solid rgba(255,255,255,0.35);
-      color: #fff;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      padding: 11px 26px;
-      border-radius: 50px;
-      transition: background-color 0.2s, border-color 0.2s;
-    }
+.about-intro__descr em {
+  font-style: italic;
+}
 
-    .social-link:hover {
-      background-color: rgba(255,255,255,0.1);
-      border-color: rgba(255,255,255,0.6);
-    }
+/* ============ "Про мене" ============ */
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 480px) {
-      .hero {
-        flex-direction: column;
-        min-height: unset;
-      }
+.about-bio {
+  background-color: var(--color-cream);
+  padding: 75px 0 15px;
+}
 
-      .hero-text {
-        flex: unset;
-        width: 100%;
-        order: 1;
-        padding: 44px 28px 36px;
-      }
+.about-bio__descr {
+  text-align: center;
+  margin-bottom: 50px;
+}
 
-      .hero-photo {
-        flex: unset;
-        width: 100%;
-        order: 2;
-        height: 360px;
-      }
+.about-bio__descr strong {
+  color: #333;
+}
 
-      .hero-name { font-size: 20px; }
-      .hero-tagline { font-size: 16px; }
+.about-bio__gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+}
 
-      .when-section  { padding: 56px 28px; }
-      .hi-section    { padding: 56px 28px; }
-      .about-section { padding: 56px 28px; }
-      .reviews-section { padding: 56px 28px; }
-      .price-section { padding: 56px 28px; }
-      .cta-section   { padding: 0 28px 64px; }
-      footer         { padding: 44px 28px; }
+.about-bio__gallery-item {
+  flex: 1 1 100%;
+  max-width: 100%;
+  min-height: 240px;
+  aspect-ratio: 16 / 9;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
 
-      .when-title    { font-size: 24px; }
-      .hi-title      { font-size: 22px; }
-      .section-title { font-size: 26px; }
-      .reviews-subtitle { font-size: 17px; }
+@media (min-width: 900px) {
+  .about-bio__gallery-item {
+    flex: 1 1 280px;
+    max-width: 360px;
+    aspect-ratio: 1 / 1;
+    min-height: unset;
+  }
+}
 
-      .gallery {
-        flex-direction: column;
-      }
+.about-bio__cont {
+  background-color: var(--color-cream);
+  padding: 30px 0 15px;
+}
 
-      .gallery-item {
-        width: 100%;
-        aspect-ratio: 16/9;
-      }
+.about-bio__cont .body-text {
+  text-align: center;
+}
 
-      .price-cards {
-        flex-direction: column;
-        align-items: center;
-      }
+.about-bio__cont strong {
+  color: #333;
+}
 
-      .price-card { width: 100%; max-width: 340px; }
-    }
+/* ============ "Відгуки" ============ */
+
+.testimonials {
+  background-color: var(--color-sage);
+  padding: 75px 0;
+}
+
+.testimonials__inner {
+  text-align: center;
+}
+
+.testimonials__title {
+  color: var(--color-dark);
+  font-weight: 800;
+  font-size: 28px;
+  padding-bottom: 20px;
+}
+
+@media (min-width: 900px) {
+  .testimonials__title { font-size: 56px; }
+}
+
+.testimonials__subtitle {
+  color: var(--color-body);
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 700;
+  padding-bottom: 40px;
+}
+
+.testimonials__list p {
+  text-align: left;
+  color: var(--color-body);
+  font-size: 26px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.testimonials__list p strong {
+  font-weight: 700;
+}
+
+/* ============ "Вартість" ============ */
+
+.pricing {
+  background-color: var(--color-cream);
+  padding: 75px 0 45px;
+}
+
+.pricing__title {
+  margin-bottom: 40px;
+}
+
+@media (min-width: 900px) {
+  .pricing__title { margin-bottom: 105px; }
+}
+
+.pricing__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.pricing__card {
+  flex: 1 1 260px;
+  max-width: 460px;
+  width: calc(100% - 24px);
+  background-color: var(--color-white);
+  border-radius: var(--radius-card);
+  box-shadow: 0 15px 45px -10px rgba(39, 45, 66, 0.15);
+  padding: 40px 32px;
+  text-align: center;
+}
+
+.pricing__card-title {
+  color: var(--color-dark);
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 900px) {
+  .pricing__card-title { font-size: 38px; line-height: 1.1; }
+}
+
+.pricing__card-uptitle {
+  color: var(--color-body);
+  font-size: 24px;
+  font-weight: 400;
+  opacity: 0.7;
+  margin-bottom: 16px;
+}
+
+.pricing__card-price {
+  color: var(--color-green);
+  font-weight: 800;
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 900px) {
+  .pricing__card-price { font-size: 40px; }
+}
+
+.pricing__card-descr {
+  color: var(--color-body);
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+/* ============ Фінальний CTA ============ */
+
+.final-cta {
+  background-color: var(--color-cream);
+  padding: 60px 0 75px;
+  text-align: center;
+}
+
+.final-cta__descr {
+  color: var(--color-body);
+  font-size: 26px;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.final-cta__descr strong {
+  color: var(--color-dark);
+}
+
+/* ============ Соцмережі (футер) ============ */
+
+.social-footer {
+  background-color: var(--color-dark);
+  padding: 60px 0 30px;
+  text-align: center;
+}
+
+.social-footer__title {
+  color: var(--color-sage);
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+}
+
+.social-footer__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  list-style: none;
+}
+
+.social-footer__link {
+  display: inline-block;
+  background-color: var(--color-sage);
+  color: var(--color-dark);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 16px;
+  border-radius: var(--radius-btn);
+  transition: background-color .2s ease-in-out;
+  white-space: nowrap;
+}
+
+.social-footer__link:hover {
+  background-color: #d9e0d2;
+}
+
   </style>
 </head>
 <body>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-text">
-      <h1 class="hero-name">Микола Шаповал</h1>
-      <p class="hero-tagline">Допомагаю нарешті видихнути й повернути смак до життя.</p>
-      <a href="#contact" class="btn">
-        ПИШІТЬ СЮДИ
-        <img src="images/tg-icon.png" alt="Telegram" />
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <h1 class="hero__title">МИКОЛА ШАПОВАЛ</h1>
+        <p class="hero__descr">Допомагаю нарешті видихнути й повернути смак до життя.</p>
+        <a class="btn-tg" href="https://t.me/shapoval_nikolay" target="_blank" rel="noopener">
+          <span>ПИШІТЬ СЮДИ</span>
+          <span class="btn-tg__icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></span>
+        </a>
+      </div>
+      <div class="hero__photo-wrap">
+        <div class="hero__photo"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ДО МЕНЕ ЗВЕРТАЮТЬСЯ КОЛИ -->
+  <section class="intro-q">
+    <div class="container narrow-960 text-center">
+      <h2 class="section-title">До мене звертаються коли…</h2>
+    </div>
+  </section>
+
+  <!-- ПРИЧИНИ -->
+  <section class="reasons">
+    <div class="container narrow-960">
+      <ul class="reasons__list">
+        <li class="reasons__item">
+          <span class="reasons__bullet"></span>
+          <div>
+            <div class="reasons__title">ВТОМИЛАСЬ БУТИ СИЛЬНОЮ</div>
+            <div class="reasons__descr">Бо береш відповідальність. І є результати, але <strong>хочеться й легкості</strong>, гри та повернути смак до життя.</div>
+          </div>
+        </li>
+        <li class="reasons__item">
+          <span class="reasons__bullet"></span>
+          <div>
+            <div class="reasons__title">СТОСУНКИ: ЛИШАТИСЯ ЧИ ЙТИ</div>
+            <div class="reasons__descr">Він не чує і ти втомилась чекати. Всередині — і образа, і провина, і страх, але рішення немає <strong>і це виснажує найбільше</strong>.</div>
+          </div>
+        </li>
+        <li class="reasons__item">
+          <span class="reasons__bullet"></span>
+          <div>
+            <div class="reasons__title">ВАЖКО КАЗАТИ «НІ»</div>
+            <div class="reasons__descr">Ти добра, за всіх переживаєш, але до себе – <strong>нищівна самокритика.</strong> А ще – внутрішня напруга, яка з'їдає всі сили.</div>
+          </div>
+        </li>
+        <li class="reasons__item">
+          <span class="reasons__bullet"></span>
+          <div>
+            <div class="reasons__title">ПЕРЕЇДАННЯ ТА ЗРИВИ</div>
+            <div class="reasons__descr"><strong>Справа не в силі волі</strong>, бо це не від голоду, а спосіб заглушити щось нестерпне.<br>Коли на душі стає легше, переїдання зникають.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ПРИВІТ Я МИКОЛА -->
+  <section class="about-intro">
+    <div class="container narrow-960">
+      <h2 class="about-intro__title">ПРИВІТ! Я МИКОЛА,</h2>
+      <div class="about-intro__descr">
+        <strong>психолог у клієнтоцентрованому підході.</strong> Зі мною можна злитися, плакати, мовчати, не знаходити слів, бути слабкою, розгубленою чи втомленою — усі почуття будуть доречними.
+        <br><br>
+        <em>Знаю, від чоловіків зазвичай очікують тиск, критику та поради, як жити.</em>
+        <br><br>
+        Мій підхід: підтримка без умов та оцінок, і створення простору, в якому можна розслабитись. Тоді всередині зʼявляється «зі мною все добре», а з цим — сміливість жити так, як хочеш саме ти.
+      </div>
+    </div>
+  </section>
+
+  <!-- ПРО МЕНЕ -->
+  <section class="about-bio">
+    <div class="container narrow-960">
+      <h2 class="section-title" style="margin-bottom:24px;">Про мене</h2>
+      <p class="body-text about-bio__descr">В психології я вже <strong>12 років</strong>. Починав із НЛП, гіпнотерапії, тренінгів зі стосунків та особистісного зростання.</p>
+      <div class="about-bio__gallery">
+        <div class="about-bio__gallery-item" style="background-image:url('img/bio-1.jpg');"></div>
+        <div class="about-bio__gallery-item" style="background-image:url('img/bio-2.jpg');"></div>
+        <div class="about-bio__gallery-item" style="background-image:url('img/bio-3.jpg');"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-bio__cont">
+    <div class="container narrow-960">
+      <p class="body-text">Згодом прийшов до того, що вважаю найважливішим — глибокої і дбайливої роботи з Людиною.<br><br>За останні <strong>4 роки</strong> — більше <strong>1300 годин</strong> психотерапевтичної практики</p>
+    </div>
+  </section>
+
+  <!-- ВІДГУКИ -->
+  <section class="testimonials">
+    <div class="container narrow-560 testimonials__inner">
+      <h2 class="testimonials__title">Відгуки</h2>
+      <p class="testimonials__subtitle"><strong>Раніше я їх збирав, тепер — ні, і ось чому:</strong></p>
+      <div class="testimonials__list">
+        <p><strong>1.</strong> Через страх зіпсувати стосунки, клієнту може бути важко відмовити. Це вибір перед яким я не хочу ставити.</p>
+        <p><strong>2.</strong> Навіть анонімний відгук, написаний з власної ініціативи, може обернутися переживаннями. Просто тому, що його хтось буде читати та оцінювати.</p>
+        <p><strong>3.</strong> Справжність анонімного відгуку все одно ніяк не підтвердити.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ВАРТІСТЬ -->
+  <section class="pricing">
+    <div class="container">
+      <h2 class="section-title pricing__title">Вартість</h2>
+      <div class="pricing__grid">
+        <div class="pricing__card">
+          <div class="pricing__card-title">Пробна зустріч</div>
+          <div class="pricing__card-uptitle">тривалість - 30 хвилин</div>
+          <div class="pricing__card-price">500 грн</div>
+          <div class="pricing__card-descr">Щоб познайомитись, відчути<br>чи комфортно вам зі мною, отримати розгорнуті відповіді на особисті питання.</div>
+        </div>
+        <div class="pricing__card">
+          <div class="pricing__card-title">Подальші зустрічі</div>
+          <div class="pricing__card-uptitle">тривалість - 50 хвилин</div>
+          <div class="pricing__card-price">1500 грн</div>
+          <div class="pricing__card-descr">Зазвичай - 1 раз на тиждень.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФІНАЛЬНИЙ CTA -->
+  <section class="final-cta">
+    <div class="container narrow-960">
+      <p class="final-cta__descr">Навіть якщо ви не знаєте, з чого почати, і «який у вас запит» — це нормально.<br><br>Просто напишіть<br><strong>«хочу записатися на пробну зустріч»</strong>.<br>Далі розберемося разом.</p>
+      <a class="btn-tg" href="https://t.me/shapoval_nikolay" target="_blank" rel="noopener">
+        <span>ПИШІТЬ СЮДИ</span>
+        <span class="btn-tg__icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></span>
       </a>
     </div>
-    <div class="hero-photo">
-      <img src="images/hero.png" alt="Микола Шаповал" />
-    </div>
   </section>
 
-  <!-- WHEN -->
-  <section class="when-section">
-    <h2 class="when-title">До мене звертаються коли…</h2>
-    <ul class="when-list">
-      <li class="when-item">
-        <div class="when-dot"></div>
-        <div>
-          <div class="when-item-title">Втомилась бути сильною</div>
-          <p class="when-item-text">Бо береш відповідальність. І є результати, але <strong>хочеться й легкості</strong>, гри та повернути смак до життя.</p>
-        </div>
-      </li>
-      <li class="when-item">
-        <div class="when-dot"></div>
-        <div>
-          <div class="when-item-title">Стосунки: лишатися чи йти</div>
-          <p class="when-item-text">Він не чує і ти втомилась чекати. Всередині — і образа, і провина, і страх, але рішення немає <strong>і це виснажує найбільше</strong>.</p>
-        </div>
-      </li>
-      <li class="when-item">
-        <div class="when-dot"></div>
-        <div>
-          <div class="when-item-title">Важко казати «Ні»</div>
-          <p class="when-item-text">Ти добра, за всіх переживаєш, але до себе – <strong>нищівна самокритика.</strong> А ще – внутрішня напруга, яка з'їдає всі сили.</p>
-        </div>
-      </li>
-      <li class="when-item">
-        <div class="when-dot"></div>
-        <div>
-          <div class="when-item-title">Переїдання та зриви</div>
-          <p class="when-item-text"><strong>Справа не в силі волі</strong>, бо це не від голоду, а спосіб заглушити щось нестерпне.<br>Коли на душі стає легше, переїдання зникають.</p>
-        </div>
-      </li>
-    </ul>
-  </section>
-
-  <!-- HI -->
-  <section class="hi-section">
-    <h2 class="hi-title">Привіт! Я Микола,</h2>
-    <div class="hi-body">
-      <p><strong>психолог у клієнтоцентрованому підході.</strong> Зі мною можна злитися, плакати, мовчати, не знаходити слів, бути слабкою, розгубленою чи втомленою — усі почуття будуть доречними.</p>
-      <p class="hi-italic">Знаю, від чоловіків зазвичай очікують тиск, критику та поради, як жити.</p>
-      <p class="hi-colored">Мій підхід: підтримка без умов та оцінок, і створення простору, в якому можна розслабитись. Тоді всередині з'являється «зі мною все добре», а з цим — сміливість жити так, як хочеш саме ти.</p>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about-section">
-    <h2 class="section-title">Про мене</h2>
-    <div class="about-intro">
-      <p>В психології я вже <strong>12 років</strong>. Починав із НЛП, гіпнотерапії, тренінгів зі стосунків та особистісного зростання.</p>
-    </div>
-    <div class="gallery">
-      <div class="gallery-item">
-        <img src="images/gallery1.png" alt="Микола Шаповал — інтерв'ю" />
-      </div>
-      <div class="gallery-item">
-        <img src="images/gallery2.png" alt="Микола Шаповал — тренінг" />
-      </div>
-      <div class="gallery-item">
-        <img src="images/gallery3.png" alt="Микола Шаповал — група" />
-      </div>
-    </div>
-    <div class="about-outro">
-      <p>Згодом прийшов до того, що вважаю найважливішим — глибокої і дбайливої роботи з Людиною.</p>
-      <p>За останні <strong>4 роки</strong> — більше <strong>1300 годин</strong> психотерапевтичної практики</p>
-    </div>
-  </section>
-
-  <!-- REVIEWS -->
-  <section class="reviews-section">
-    <h2 class="section-title">Відгуки</h2>
-    <p class="reviews-subtitle">Раніше я їх збирав, тепер — ні, і ось чому:</p>
-    <div class="reviews-list">
-      <div class="reviews-item"><strong>1.</strong> Через страх зіпсувати стосунки, клієнту може бути важко відмовити. Це вибір перед яким я не хочу ставити.</div>
-      <div class="reviews-item"><strong>2.</strong> Навіть анонімний відгук, написаний з власної ініціативи, може обернутися переживаннями. Просто тому, що його хтось буде читати та оцінювати.</div>
-      <div class="reviews-item"><strong>3.</strong> Справжність анонімного відгуку все одно ніяк не підтвердити.</div>
-    </div>
-  </section>
-
-  <!-- PRICE -->
-  <section class="price-section">
-    <h2 class="section-title">Вартість</h2>
-    <div class="price-cards">
-      <div class="price-card">
-        <div class="price-card-title">Пробна зустріч</div>
-        <div class="price-card-duration">тривалість - 30 хвилин</div>
-        <div class="price-card-price">500 грн</div>
-        <div class="price-card-desc">Щоб познайомитись, відчути чи комфортно вам зі мною, отримати розгорнуті відповіді на особисті питання.</div>
-      </div>
-      <div class="price-card">
-        <div class="price-card-title">Подальші зустрічі</div>
-        <div class="price-card-duration">тривалість - 50 хвилин</div>
-        <div class="price-card-price">1500 грн</div>
-        <div class="price-card-desc">Зазвичай - 1 раз на тиждень.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section" id="contact">
-    <div class="cta-text">
-      <p>Навіть якщо ви не знаєте, з чого почати, і «який у вас запит» — це нормально.</p>
-      <p>Просто напишіть<br><strong>«хочу записатися на пробну зустріч»</strong>.<br>Далі розберемося разом.</p>
-    </div>
-    <div class="cta-btn-wrap">
-      <a href="https://t.me/shapoval_nikolay" target="_blank" class="btn">
-        ПИШІТЬ СЮДИ
-        <img src="images/tg-icon.png" alt="Telegram" />
-      </a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p class="footer-title">Мої соціальні мережі:</p>
-    <div class="social-links">
-      <a href="https://www.instagram.com/psy.shapoval/" target="_blank" class="social-link">Instagram</a>
-      <a href="https://www.facebook.com/psy.shapoval" target="_blank" class="social-link">Facebook</a>
-      <a href="https://www.tiktok.com/@psy.shapoval" target="_blank" class="social-link">Tik-Tok</a>
+  <!-- СОЦМЕРЕЖІ -->
+  <footer class="social-footer">
+    <div class="container">
+      <div class="social-footer__title">Мої соціальні мережі:</div>
+      <ul class="social-footer__list">
+        <li><a class="social-footer__link" href="#">Instagram</a></li>
+        <li><a class="social-footer__link" href="#">Facebook</a></li>
+        <li><a class="social-footer__link" href="#">Tik-Tok</a></li>
+      </ul>
     </div>
   </footer>
 
