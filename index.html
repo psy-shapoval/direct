@@ -210,7 +210,7 @@ img {
 .hero__photo {
   width: 100%;
   min-height: 320px;
-  background-image: url('images/hero1.png');
+  background-image: url('images/Психолог Микола Шаповал.webp');
   background-size: cover;
   background-position: center top;
   border-radius: 0;
@@ -399,6 +399,52 @@ img {
 
 .about-bio__cont strong {
   color: #333;
+}
+
+.about-bio__edu-outer {
+  display: flex;
+  gap: 20px;
+  margin: 30px 0 0;
+}
+
+.about-bio__edu-side {
+  flex: 1 1 0;
+}
+
+.about-bio__edu-center {
+  flex: 1 1 0;
+}
+
+.about-bio__edu-label {
+  text-align: center;
+  color: var(--color-body);
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 500;
+  opacity: 0.7;
+  margin-top: 8px;
+}
+
+.about-bio__edu-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+@media (max-width: 899px) {
+  .about-bio__edu-outer {
+    flex-direction: column;
+    gap: 0;
+  }
+  .about-bio__edu-side {
+    display: none;
+  }
+}
+
+.about-bio__edu-outer {
+  margin-top: 30px;
 }
 
 /* ============ "Відгуки" ============ */
@@ -645,16 +691,27 @@ img {
       <h2 class="section-title" style="margin-bottom:24px;">Про мене</h2>
       <p class="body-text about-bio__descr">В психології вже <strong>12 років</strong>. Починав з НЛП, гіпнотерапії, тренінгів зі стосунків та особистісного зростання.</p>
       <div class="about-bio__gallery">
-        <div class="about-bio__gallery-item" style="background-image:url('images/gallery1.png');"></div>
-        <div class="about-bio__gallery-item" style="background-image:url('images/gallery2.png');"></div>
-        <div class="about-bio__gallery-item" style="background-image:url('images/gallery3.png');"></div>
+        <div class="about-bio__gallery-item" style="background-image:url('images/Психолог Микола Шаповал на телебаченні.webp');"></div>
+        <div class="about-bio__gallery-item" style="background-image:url('images/Психолог Микола Шаповал. Тренінги по стосунках.webp');"></div>
+        <div class="about-bio__gallery-item" style="background-image:url('images/Психолог Микола Шаповал. Тренінги з особистісного зростання.webp');"></div>
       </div>
     </div>
   </section>
 
   <section class="about-bio__cont">
     <div class="container narrow-960">
-      <p class="body-text">Згодом прийшов до найважливішого — глибокої і дбайливої роботи з Людиною.<br><br>За останні <strong>4 роки</strong> — більше <strong>1300 годин</strong> психотерапевтичної практики.</p>
+      <p class="body-text">Згодом прийшов до найважливішого — глибокої і дбайливої роботи з Людиною.</p>
+
+      <p class="body-text" style="margin-top:30px;">За останні <strong>4 роки</strong> — більше <strong>1300 годин</strong> психотерапевтичної практики.</p>
+
+      <div class="about-bio__edu-outer">
+        <div class="about-bio__edu-side"></div>
+        <div class="about-bio__edu-center">
+          <div class="about-bio__edu-img" style="background-image:url('images/Психолог Микола Шаповал. Освіта.webp');"></div>
+          <div class="about-bio__edu-label">про професійну освіту — в instagram</div>
+        </div>
+        <div class="about-bio__edu-side"></div>
+      </div>
     </div>
   </section>
 
